@@ -23,7 +23,7 @@ data = pd.read_csv("ks-projects-201801.csv",
                    parse_dates=["deadline","launched"],
                    infer_datetime_format=True)
 var = list(data)
-data = data.drop(labels=[1014746686,1245461087, 1384087152, 1480763647, 330942060, 462917959, 69489148])
+data = data.drop(labels=[1014746686,1245461087, 1384087152, 1480763647, 330942060, 462917959, 69489148]) #Clumsy way to pick off rows. See if there's a smarter way to go about it.
 y = [i for i in var if i=="state"]
 x = data[var]
 x = x.drop(labels=y,axis=1)
